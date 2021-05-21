@@ -11,10 +11,19 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer'
 import Notifications from './Screens/Notifications';
 import Account from './Screens/Account';
-import {Ionicons,MaterialCommunityIcons} from 'react-native-vector-icons'
+import {Ionicons,MaterialCommunityIcons, FontAwesome} from 'react-native-vector-icons'
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs'
 import SignOut from './Screens/SignOut';
-
+import DrawerContent from './Screens/DrawerContent'
+import MyMusic from './Screens/MyMusic';
+import Podcast from './Screens/Podcast';
+import LanguagePref from './Settings/LanguagePref';
+import StreamingQuality from './Settings/StreamingQuality';
+import DownloadQuality from './Settings/DownloadQuality';
+import Eqalizer from './Settings/Eqalizer';
+import MyDownloads from './MyMusic/MyDownloads';
+import MyFavs from './MyMusic/MyFavs';
+import MyLibrary from './MyMusic/MyLibrary';
 const Stack = createStackNavigator();
 export default function App() {
   return (
@@ -30,7 +39,42 @@ export default function App() {
           headerShown: false
         }}
         />
-        <Stack.Screen name = 'Home' component={Tabs}
+        <Stack.Screen name = 'HomeScreen' component={DrawerNavigator}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen name = 'LanguagePref' component={LanguagePref}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen name = 'StreamingQuality' component={StreamingQuality}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen name = 'DownloadQuality' component={DownloadQuality}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen name = 'Eqalizer' component={Eqalizer}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen name = 'MyDownloads' component={MyDownloads}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen name = 'MyFavs' component={MyFavs}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen name = 'MyLibrary' component={MyLibrary}
         options={{
           headerShown: false
         }}
@@ -51,17 +95,25 @@ function Tabs() {
     shifting={true}
     barStyle={{backgroundColor:'black'}}
     >
-      <Tab.Screen name="Home" component={DrawerNavigation}
+      
+      <Tab.Screen name="Home" component={Home}
       options={{
         tabBarIcon:({color})=>(
           <MaterialCommunityIcons name="home" size={24} color={color} />
         ),
       }}
       />
-      <Tab.Screen name="Settings" component={Settings}
+       <Tab.Screen name="Podcast" component={Podcast}
       options={{
         tabBarIcon:({color})=>(
-          <Ionicons name="settings" size={24} color={color} />
+          <FontAwesome name="podcast" size={24} color={color} />
+        ),
+      }}
+      />
+      <Tab.Screen name="MyMusic" component={MyMusic}
+      options={{
+        tabBarIcon:({color})=>(
+          <Ionicons name="ios-musical-notes" size={24} color={color} />
         )
       }}
       />
@@ -70,13 +122,12 @@ function Tabs() {
 }
 
 const Drawer = createDrawerNavigator();
-function DrawerNavigation(){
+function DrawerNavigator(){
   return(
-    <Drawer.Navigator>
-      <Drawer.Screen name = 'Home' component={Home}/>
-      <Drawer.Screen name = 'Notifications' component={Notifications}/>
+    <Drawer.Navigator drawerContent={(props) => <DrawerContent{...props}/>}>
+      <Drawer.Screen name = 'Music' component={Tabs}/>
+      <Drawer.Screen name = 'Settings' component={Settings}/>
       <Drawer.Screen name= 'Account' component={Account}/>
-      <Drawer.Screen name= 'SignOut' component={SignOut}/>
     </Drawer.Navigator>
   )
 }

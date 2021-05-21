@@ -1,16 +1,16 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { Ionicons, MaterialIcons } from 'react-native-vector-icons';
+import { StyleSheet, Text, View, Image } from 'react-native'
+import { Ionicons,Octicons, MaterialIcons } from 'react-native-vector-icons';
 
 const MusicList = ({name, details}) => {
     return (
         <View style={styles.container}>
-        <Ionicons name="musical-notes-sharp" size={28} color="#ff8303" />
-        <View style={{ width: "77%" ,paddingLeft:10}}>
+        <Image stye={{}}/>
+        <View style={{ width: "100%" ,padding:10}}>
           <Text style={{ fontSize: 20, fontWeight: "bold", color: "#929695" }}>
             {name}
           </Text>
-          <Text style={{ fontSize: 20, color: "orange" }}>{details}</Text>
+          <Text style={{ fontSize: 15, color: "orange" }}>{details}</Text>
         </View>
 
         <View
@@ -20,12 +20,7 @@ const MusicList = ({name, details}) => {
             justifyContent: "flex-end",
           }}>
 
-          <View>
-            <Ionicons name="ios-heart-sharp" size={24} color="#ff8303" />
-          </View>
-          <View style={{marginLeft:15}}>
-            <MaterialIcons name="delete" size={28} color="#ff8303" />
-          </View>
+          
         </View>
       </View>
     )
@@ -35,12 +30,13 @@ export default MusicList
 
 const styles = StyleSheet.create({
     container:{
-        height: 60,
-        width: "100%",
+        height: 150,
+        width: 150,
         backgroundColor: "#2D2D2D",
         borderBottomWidth: 0.3,
         paddingHorizontal:20,
         flexDirection:'row',
-        alignItems:'center'
+        alignItems:'center',
+        margin:3
     }
 })

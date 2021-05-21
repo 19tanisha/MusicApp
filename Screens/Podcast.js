@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import { Ionicons } from "react-native-vector-icons"; 
-const Notification = ({navigation}) => {
+const Podcast = ({navigation}) => {
     return (
       <View style={styles.conatiner}>
         <View style={styles.header}>
@@ -11,14 +11,14 @@ const Notification = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <View style={styles.mainContainer}>
-          <Text style={{ color: "black", fontSize:22, fontWeight:'bold' }}>Notification</Text>
+          <Text style={{ color: "black", fontSize:22, fontWeight:'bold' }}>Podcast</Text>
         </View>
         </View>
       </View>
     );
 }
 
-export default Notification
+export default Podcast
 
 const styles = StyleSheet.create({
   conatiner: {

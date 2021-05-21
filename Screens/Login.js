@@ -26,7 +26,7 @@ const Login = ({navigation}) => {
                 style={styles.button}
                 colors={['#ff8303','#ff8303','orange', 'orange']}
             >
-            <TouchableOpacity onPress={()=>navigation.navigate('Home')}
+            <TouchableOpacity onPress={()=>navigation.navigate('HomeScreen')}
             
             >
                 <View style={{height:50,width:150,alignItems:'center', justifyContent:'center'}}>

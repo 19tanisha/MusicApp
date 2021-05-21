@@ -7,9 +7,13 @@ const SignOut = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
+               
           <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-            <Ionicons name="arrow-back" size={28} color="#ff8303" />
+            <Ionicons name="arrow-back" size={28} color="black" />
           </TouchableOpacity>
+          <View style={styles.mainContainer}>
+          <Text style={{color: "black", fontSize:22, fontWeight:'bold'}}>SignOut Page</Text>
+          </View>
         </View>
         <View style={{justifyContent:'center', alignItems:'center'}}>
             <LinearGradient 
@@ -60,6 +64,15 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "flex-start",
         paddingHorizontal: 10,
+        backgroundColor:'#ff8303',
+        justifyContent:'center',
+        alignItems:'center',
+        flexDirection:'row'
+      },
+      mainContainer: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
       },
     
 })
