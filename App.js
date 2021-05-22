@@ -24,6 +24,7 @@ import Eqalizer from './Settings/Eqalizer';
 import MyDownloads from './MyMusic/MyDownloads';
 import MyFavs from './MyMusic/MyFavs';
 import MyLibrary from './MyMusic/MyLibrary';
+import Navigation from './Settings/Navigation';
 const Stack = createStackNavigator();
 export default function App() {
   return (
@@ -75,6 +76,11 @@ export default function App() {
         }}
         />
         <Stack.Screen name = 'MyLibrary' component={MyLibrary}
+        options={{
+          headerShown: false
+        }}
+        />
+        <Stack.Screen name = 'Navigation' component={Navigation}
         options={{
           headerShown: false
         }}
