@@ -5,7 +5,7 @@ import { Ionicons, Entypo, FontAwesome, MaterialIcons } from "react-native-vecto
 const Account = (props) => {
     return (
       <View style={styles.conatiner}>
-        {/*Header Section*/}
+{/*---------------------------------------------------------Header Section-----------------------------------------------------------------*/}
 
         <View style={styles.header}>
           <View style={{width:'10%'}}>
@@ -19,8 +19,8 @@ const Account = (props) => {
           <View style={{width:'10%'}}></View>
         </View>
 
-        {/*Screen Content*/}
-        {/*Profile Photo*/}
+{/*-----------------------------------------------------------Screen Content----------------------------------------------------------------*/}
+{/*----------------------------------------------------------Profile Photo-------------------------------------------------------------------*/}
         <ImageBackground
         source={{uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRYGXBks17207cStyw8yIWqeX4R7xKLXgHjw&usqp=CAU'}}
         style={{width:200, height:200, marginTop:20, marginBottom:10}}
@@ -32,7 +32,7 @@ const Account = (props) => {
         />
         </TouchableOpacity>
         </ImageBackground>
-        {/*Display name*/}
+{/*-----------------------------------------------------------Display name------------------------------------------------------------------*/}
         <ScrollView style={{width:'100%'}}
         contentContainerStyle={{ alignItems:'center'}}
         >
@@ -51,7 +51,7 @@ const Account = (props) => {
           <MaterialIcons name='edit' size={30} color='white'/>
         </View>
         </View>
-        {/*User Info*/}
+{/*-----------------------------------------------------------User Info---------------------------------------------------------------------*/}
 
         <View style={styles.userinfo}>
           <View style={{width:'90%'}}>
@@ -68,7 +68,7 @@ const Account = (props) => {
           <MaterialIcons name='edit' size={30} color='white'/>
         </View>
         </View>
-        {/*Email */}
+{/*-------------------------------------------------------------------Email----------------------------------------------------------------- */}
         <View style={styles.userinfo}>
           <View style={{width:'90%'}}>
         <Text style={{fontSize:18, fontWeight:'bold', color:'white'}}>
@@ -84,7 +84,7 @@ const Account = (props) => {
           <MaterialIcons name='edit' size={30} color='white'/>
         </View>
         </View>
-        {/*Conact no.*/}
+{/*----------------------------------------------------------------------Conact no.----------------------------------------------------------*/}
         <View style={styles.userinfo}>
           <View style={{width:'90%'}}>
         <Text style={{fontSize:18, fontWeight:'bold', color:'white'}}>
@@ -100,7 +100,7 @@ const Account = (props) => {
           <MaterialIcons name='edit' size={30} color='white'/>
         </View>
         </View>
-        {/*Gender */}
+{/*-----------------------------------------------------------------Gender ------------------------------------------------------------------*/}
         <View style={styles.userinfo}>
           <View style={{width:'90%'}}>
         <Text style={{fontSize:18, fontWeight:'bold', color:'white'}}>
@@ -116,6 +116,7 @@ const Account = (props) => {
           <MaterialIcons name='edit' size={30} color='white'/>
         </View>
         </View>
+{/*-----------------------------------------------------------SignOut Button Section----------------------------------------------------------*/}       
         <LinearGradient
         colors={["#ff8303", "orange", "orange", "#ff8303"]}
         style={styles.signout}>
@@ -127,6 +128,7 @@ const Account = (props) => {
           </TouchableOpacity>
         </View>
         </LinearGradient>
+{/*-----------------------------------------------------------End---------------------------------------------------------*/}       
         </ScrollView>
       </View>
     );

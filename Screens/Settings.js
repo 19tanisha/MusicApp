@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Switch, ScrollView} from 'react-native'
-import { Ionicons,MaterialIcons ,Feather, Entypo, FontAwesome5, MaterialCommunityIcons} from "react-native-vector-icons";
+import { Ionicons,MaterialIcons ,Feather, Entypo, FontAwesome5,AntDesign ,MaterialCommunityIcons} from "react-native-vector-icons";
 import LanguagePref from '../Settings/LanguagePref'
 import StreamingQuality from '../Settings/StreamingQuality'
 import DownloadQuality from '../Settings/DownloadQuality' 
@@ -12,6 +12,7 @@ const Settings = (props) => {
     return (
       <View style={styles.conatiner}>
 
+{/*----------------------------------------------------Header Section---------------------------------------------------------------- */}
         <View style={styles.header}>
           <View style={{width:'10%'}}>
             <TouchableOpacity onPress={()=>props.navigation.openDrawer()}>
@@ -25,11 +26,12 @@ const Settings = (props) => {
           <View style={{width:'10%'}}></View>
         
         </View>
+{/*----------------------------------------------------Language Settings Section---------------------------------------------------------------- */}
         <ScrollView style={{width:'100%'}}>
         <Text style={{fontSize:18, fontWeight:'bold', color:'white', padding:5}}>
           Language Settings
         </Text>
-        
+{/*----------------------------------------------------Language Preferance Section---------------------------------------------------------------- */}
         <TouchableOpacity
         onPress={() => props.navigation.navigate("LanguagePref")}
       >
@@ -42,11 +44,12 @@ const Settings = (props) => {
           </View>
         </View>
       </TouchableOpacity>
-
+{/*----------------------------------------------------Music Quality Header Section---------------------------------------------------------------- */}
         <Text style={{fontSize:18, fontWeight:'bold', color:'white', padding:5}}>
           Music Quality
         </Text>
-        <TouchableOpacity onPress={()=> props.navigation.navigate('LanguagePref')}>
+{/*----------------------------------------------------Equalizer Section---------------------------------------------------------------- */}
+        <TouchableOpacity onPress={()=> props.navigation.navigate('Eqalizer')}>
         
           <View style={styles.list}>
             <View style={{ color: "black", width:'90%' }}>
@@ -60,8 +63,8 @@ const Settings = (props) => {
         </View>
         
         </TouchableOpacity>
-      
-        <TouchableOpacity onPress={()=> props.navigation.navigate('LanguagePref')}>
+{/*----------------------------------------------------Download Quality Section---------------------------------------------------------------- */}      
+        
         
           <View style={styles.list}>
             <View style={{ color: "black", width:'90%' }}>
@@ -72,7 +75,7 @@ const Settings = (props) => {
           <View style={{ alignItems: "flex-end", width: "10%" }}>
             <View style={{flexDirection:'row'}}>
             <TouchableOpacity>
-              <MaterialCommunityIcons name="quality-low" size={28} color="black" />
+              <MaterialCommunityIcons name="quality-low" size={28} color="orange" />
             </TouchableOpacity>
 
             <TouchableOpacity>
@@ -90,9 +93,9 @@ const Settings = (props) => {
           </View>
         </View>
         
-        </TouchableOpacity>
-      
-        <TouchableOpacity onPress={()=> props.navigation.navigate('LanguagePref')}>
+    
+{/*----------------------------------------------------Streaming Quality Section---------------------------------------------------------------- */}     
+        
         
           <View style={styles.list}>
             <View style={{ color: "black", width:'90%' }}>
@@ -107,7 +110,7 @@ const Settings = (props) => {
             </TouchableOpacity>
 
             <TouchableOpacity>
-            <MaterialCommunityIcons name="quality-medium" size={28} color="black" />
+            <MaterialCommunityIcons name="quality-medium" size={28} color="orange" />
             </TouchableOpacity>
 
             <TouchableOpacity>
@@ -118,9 +121,9 @@ const Settings = (props) => {
           </View>
         </View>
         
-        </TouchableOpacity>
-        {/*------------------------------Data Usage Section--------------------------------*/}
-         {/*------------------------------Data Saver Section--------------------------------*/}
+     
+{/*--------------------------------------------------------------Data Usage Section--------------------------------------------------------*/}
+        
         <View style={{flexDirection:'row', alignItems:'center'}}>
           <Text style={{color:'white',padding:5, fontWeight:'bold',fontSize:18}}>
               Data Usage
@@ -129,7 +132,7 @@ const Settings = (props) => {
               218.90Mb
           </Text>
         </View>
-        
+ {/*-----------------------------------------------------------Data Saver Section----------------------------------------------------------*/}       
         <View style={styles.list}>
           <View style={{ color: "black", width:'80%' }}>
             <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
@@ -139,7 +142,7 @@ const Settings = (props) => {
               Sets your music quality to low and disables artist canvaces
             </Text>
           </View>
-          <View style={{ alignItems: "flex-end", width: "20%" }}>
+          <View style={{ alignItems: "flex-end", width: "20%",padding:5 }}>
           <Switch
               trackColor={{ false: "#767577", true: "orange" }}
               thumbColor={isEnabled ? "black" : "#f4f3f4"}
@@ -149,11 +152,12 @@ const Settings = (props) => {
             />
           </View>
         </View>
+{/*-----------------------------------------------------------Data Usage Warning Section----------------------------------------------------------*/}       
         <View style={styles.list}>
           <View style={{ color: "black", width:'90%' }}>
             <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>Data Usage Warning</Text>
           </View>
-          <View style={{ alignItems: "flex-end", width: "10%" }}>
+          <View style={{ alignItems: "flex-end", width: "10%", padding:5}}>
           <Switch
               trackColor={{ false: "#767577", true: "orange" }}
               thumbColor={isEnabled ? "yellow" : "#f4f3f4"}
@@ -163,9 +167,11 @@ const Settings = (props) => {
             />
           </View>
         </View>
+{/*------------------------------------------------------Connect to apps header Section----------------------------------------------------------*/}       
         <Text style={{color:'white',padding:5, fontWeight:'bold',fontSize:18}}>
           Connect to Apps
         </Text>
+{/*-----------------------------------------------------------Navigation Section----------------------------------------------------------*/}       
         <TouchableOpacity onPress={() => props.navigation.navigate('Navigation')}>
         <View style={styles.list}>
           <View style={{ color: "black", width:'80%' }}>
@@ -177,9 +183,89 @@ const Settings = (props) => {
             </Text>
           </View>
           
-          <View style={{ alignItems: "flex-end", width: "20%", padding:5 }}>
+          <View style={{ alignItems: "flex-end", width: "20%", padding:6 }}>
           
           <Feather name='navigation' size={24} color="black"/>
+          </View>
+        </View>
+        </TouchableOpacity>
+{/*-----------------------------------------------------------Car Mode----------------------------------------------------------*/}       
+        
+<View style={styles.list}>
+          <View style={{ color: "black", width:'80%' }}>
+            <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
+               Car Mode
+            </Text>
+            <Text style={{color:'#3e3e3e', fontSize:13}}>
+              Turns on your Auto Play
+            </Text>
+          </View>
+          <View style={{ alignItems: "flex-end", width: "20%", padding:5, justifyContent:'center'}}>
+          <Switch
+              trackColor={{ false: "#767577", true: "orange" }}
+              thumbColor={isEnabled ? "black" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
+          </View>
+        </View>
+{/*-----------------------------------------------------------Sleep Mode----------------------------------------------------------*/}
+<TouchableOpacity onPress={()=>{}}>
+<View style={styles.list}>
+          <View style={{ color: "black", width:'80%' }}>
+            <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
+               Sleep Mode
+            </Text>
+            <Text style={{color:'#3e3e3e', fontSize:13}}>
+              Set timer for your music
+            </Text>
+          </View>
+          <View style={{ alignItems: "flex-end", width: "20%", padding:5, justifyContent:'center' }}>
+          <Switch
+              trackColor={{ false: "#767577", true: "orange" }}
+              thumbColor={isEnabled ? "black" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
+            <Text style={{paddingRight:7, fontSize:12}}>
+              10 mins
+            </Text>
+          </View>
+        </View>
+        </TouchableOpacity>
+{/*----------------------------------------Help And Support----------------------------------------------------------*/}        
+<Text style={{fontSize:18, fontWeight:'bold', color:'white', padding:5}}>
+          Help and Supprot
+        </Text>
+{/*------------------------------------------Customer Care----------------------------------------------------------*/}
+<TouchableOpacity onPress={() => props.navigation.navigate('CustomerSupport')}>
+        <View style={styles.list}>
+          <View style={{ color: "black", width:'80%' }}>
+            <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
+            Customer Care
+            </Text>
+          </View>
+          
+          <View style={{ alignItems: "flex-end", width: "20%", padding:6 }}>
+          
+          <AntDesign name="customerservice" size={24} color="black" />
+          </View>
+        </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => props.navigation.navigate('Updates')}>
+        <View style={styles.list}>
+          <View style={{ color: "black", width:'80%' }}>
+            <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
+            Updates
+            </Text>
+          </View>
+          
+          <View style={{ alignItems: "flex-end", width: "20%", padding:6 }}>
+          
+          <MaterialIcons name="update" size={28} color="black" />
           </View>
         </View>
         </TouchableOpacity>
