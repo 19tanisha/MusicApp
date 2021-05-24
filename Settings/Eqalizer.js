@@ -9,6 +9,7 @@ const Equalizer = (props) => {
 
   return (
     <View style={styles.container}>
+{/*--------------------------------------------Header-------------------------------------------------------------------------------------------------- */}
       <View style={styles.header}>
         <View
           style={{ width: "10%", justifyContent: "center", paddingLeft: 5 }}
@@ -31,7 +32,7 @@ const Equalizer = (props) => {
 
         <View style={{ width: "10%" }}></View>
       </View>
-      {/* -------------------------------------------content------------------------------ */}
+      {/* -------------------------------------------Content--------------------------------------------------------------------------------------- */}
       <View style={styles.option}>
         <RadioButton
           value="first"
@@ -62,6 +63,7 @@ const Equalizer = (props) => {
         />
         <Text style={styles.optionname}>Classic</Text>
       </View>
+      {/*--------------------Radio Button--------------- */}
       <View style={styles.option}>
         <RadioButton
           value="fourth"
@@ -82,6 +84,7 @@ const Equalizer = (props) => {
         />
         <Text style={styles.optionname}>Jazz</Text>
       </View>
+     
     </View>
   );
 };

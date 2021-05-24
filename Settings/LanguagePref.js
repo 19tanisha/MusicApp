@@ -4,6 +4,7 @@ import { Ionicons } from "react-native-vector-icons";
 const LanguagePref = ({navigation}) => {
     return (
       <View style={styles.conatiner}>
+{/*------------------------------------Header--------------------------------------------------------------------------------------------------------- */}
         <View style={styles.header}>
           <View style={{width:'10%'}}>
           <TouchableOpacity onPress={() => navigation.navigate("Settings")}>
@@ -17,6 +18,7 @@ const LanguagePref = ({navigation}) => {
         </View>
         <View style={{width:'10%'}}></View>
         </View>
+{/*------------------------------------Languages---------------------------------------------------------------------------------------------------- */}     
         <ScrollView style={{width:'100%'}}>
             <View style={styles.lang}>
                 <Text style={styles.langtext}>
@@ -44,7 +46,7 @@ const LanguagePref = ({navigation}) => {
             </View>
             <View style={styles.lang}>
                 <Text style={styles.langtext}>
-                    Telgu
+                    Telegu
                 </Text>
 
             </View>
@@ -78,16 +80,8 @@ const LanguagePref = ({navigation}) => {
                 </Text>
 
             </View>
-            <View style={styles.lang}>
-                <Text style={styles.langtext}>
-                    Arabic
-                </Text>
-
-            </View>
-
-
         </ScrollView>
-      </View>
+    </View>
     );
 }
 

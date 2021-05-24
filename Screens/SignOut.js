@@ -6,6 +6,7 @@ import { Ionicons } from "react-native-vector-icons";
 const SignOut = ({navigation}) => {
     return (
         <View style={styles.container}>
+{/*---------------------------------------Header Section------------------------------------------------------------------------------------------- */}
             <View style={styles.header}>
                
           <TouchableOpacity onPress={() => navigation.navigate("Home")}>

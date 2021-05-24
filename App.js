@@ -1,19 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import Home from './Screens/Home';
 import Login from './Screens/Login';
 import SignUp from './Screens/SignUp';
 import Settings from './Screens/Settings';
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer'
-import Notifications from './Screens/Notifications';
 import Account from './Screens/Account';
 import {Ionicons,MaterialCommunityIcons, FontAwesome} from 'react-native-vector-icons'
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs'
-import SignOut from './Screens/SignOut';
 import DrawerContent from './Screens/DrawerContent'
 import MyMusic from './Screens/MyMusic';
 import Podcast from './Screens/Podcast';

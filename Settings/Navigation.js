@@ -10,6 +10,7 @@ const Navigation = (props) => {
     const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
     return (
         <View style={styles.container}>
+{/*----------------------------------------------Header---------------------------------------------------------------------------------------------- */}
             <View style={styles.header}>
         <View
           style={{ width: "10%", justifyContent: "center", paddingLeft: 5 }}
@@ -32,7 +33,7 @@ const Navigation = (props) => {
 
         <View style={{ width: "10%" }}></View>
       </View>
-{/*-----------------------------------Navigation Header---------------------------------- */}
+{/*-----------------------------------Navigation Header-------------------------------------------------------------------------------------------- */}
         <View style={{width:'100%', alignItems:'center', marginTop:20}}>
             <Text style={styles.heading}>
                 Navigation
@@ -46,6 +47,7 @@ const Navigation = (props) => {
                         Get a reminder to use navigation apps when you're in your car
                     </Text>
                 </View>
+                {/*-----------------------Switch------------------ */}
                 <View style={{width:'20%', alignItems:'flex-end'}}>
                 <Switch
                     trackColor={{ false: "#767577", true: "white" }}
@@ -57,7 +59,7 @@ const Navigation = (props) => {
                 </View>
             </View>
         </View>
-        {/*google maps */}
+{/*-----------------------------------Google Maps-------------------------------------------------------------------------------------------------- */}
 
         <View style={styles.googlemaps}>
           <View style={{flexDirection:'row', alignItems:'center'}}>
@@ -71,17 +73,18 @@ const Navigation = (props) => {
           <Text style={{color:'white', textAlign:'center', fontSize:16,marginTop:5}}>
               Play music and Podcasts in Google Maps.
           </Text>
+          {/* ------------------------connect button--------------------- */}
           <View style={{width:'100%', alignItems:'center'}}>
           <View style={styles.connect}>
               <TouchableOpacity>
-                  <Text>
+                  <Text style={{color:'white', fontWeight:'bold', fontSize:15}}>
                       Connect
                   </Text>
               </TouchableOpacity>
           </View>
         </View>
         </View>
-        {/*wazes */}
+{/*---------------------------------------Wazes--------------------------------------------------------------------------------------------------- */}
         <View style={styles.googlemaps}>
           <View style={{flexDirection:'row', alignItems:'center'}}>
             <Image source={{uri:'https://e7.pngegg.com/pngimages/151/943/png-clipart-waze-gps-navigation-systems-computer-icons-mobile-app-icon-for-google-maps-smiley-gps-navigation-systems-thumbnail.png'}}
@@ -94,16 +97,18 @@ const Navigation = (props) => {
           <Text style={{color:'white', textAlign:'center', fontSize:16,marginTop:5}}>
              Control your music while navigating
           </Text>
+          {/*------------------Get app button---------------- */}
           <View style={{width:'100%', alignItems:'center'}}>
           <View style={styles.connect}>
               <TouchableOpacity>
-                  <Text>
+                  <Text style={{color:'white', fontWeight:'bold', fontSize:15}}>
                       Get the App
                   </Text>
               </TouchableOpacity>
           </View>
         </View>
         </View>
+{/*-----------------------------------End---------------------------------------------------------------------------------------------------------- */}
         </View>
     )
 }
@@ -144,7 +149,7 @@ const styles = StyleSheet.create({
       googleimg:{
           width:50,
           height:50,
-          borderRadius:10,
+          borderRadius:5,
           margin:5
       },
       connect:{

@@ -11,6 +11,7 @@ const Home = (props) => {
     return (
         <View style = {styles.container}>
             <StatusBar style='light'/>
+{/*-------------------------------------------------Header------------------------------------------------------------------------------------------------- */}
             <View style={styles.header}>
                 
                 <View style={{width:'10%'}}>
@@ -26,7 +27,7 @@ const Home = (props) => {
                     
                 </View>
                 </View>
-
+{/*----------------------------------------------Search bar------------------------------------------------------------------------------------------- */}
             <View style={styles.search}>
                 <View style={{flexDirection:'row', width:'90%'}}>
                 <FontAwesome name="search" size={24} color="black" />
@@ -40,6 +41,7 @@ const Home = (props) => {
                 <FontAwesome name="microphone" size={24} color="black" />
                 </View>
             </View>
+{/*----------------------------------------------Content-------------------------------------------------------------------------------------------- */}
             <ScrollView style={{flex:1, width:'100%'}}>
             {/*<View style={{width:'100%', height:200}}>
             <View style={{width:'100%', padding:5}}>

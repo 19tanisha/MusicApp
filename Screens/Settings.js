@@ -12,7 +12,7 @@ const Settings = (props) => {
     return (
       <View style={styles.conatiner}>
 
-{/*----------------------------------------------------Header Section---------------------------------------------------------------- */}
+{/*-------------------------------------------Header Section----------------------------------------------------------------------------- */}
         <View style={styles.header}>
           <View style={{width:'10%'}}>
             <TouchableOpacity onPress={()=>props.navigation.openDrawer()}>
@@ -26,49 +26,49 @@ const Settings = (props) => {
           <View style={{width:'10%'}}></View>
         
         </View>
-{/*----------------------------------------------------Language Settings Section---------------------------------------------------------------- */}
+{/*----------------------------------------Language Settings Section---------------------------------------------------------------- */}
         <ScrollView style={{width:'100%'}}>
         <Text style={{fontSize:18, fontWeight:'bold', color:'white', padding:5}}>
           Language Settings
         </Text>
-{/*----------------------------------------------------Language Preferance Section---------------------------------------------------------------- */}
+{/*---------------------------------------Language Preferance Section---------------------------------------------------------------- */}
         <TouchableOpacity
         onPress={() => props.navigation.navigate("LanguagePref")}
       >
         <View style={styles.list}>
           <View style={{ color: "black", width:'90%' }}>
-            <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>Language Preference</Text>
+            <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>Language Preference</Text>
           </View>
           <View style={{ alignItems: "flex-end", width: "10%" }}>
-            <FontAwesome5 name="language" size={28} color="black" />
+            <FontAwesome5 name="language" size={28} color="white" />
           </View>
         </View>
       </TouchableOpacity>
-{/*----------------------------------------------------Music Quality Header Section---------------------------------------------------------------- */}
+{/*-----------------------------------------Music Quality Header Section---------------------------------------------------------------- */}
         <Text style={{fontSize:18, fontWeight:'bold', color:'white', padding:5}}>
           Music Quality
         </Text>
-{/*----------------------------------------------------Equalizer Section---------------------------------------------------------------- */}
+{/*-------------------------------------------Equalizer Section---------------------------------------------------------------- */}
         <TouchableOpacity onPress={()=> props.navigation.navigate('Eqalizer')}>
         
           <View style={styles.list}>
             <View style={{ color: "black", width:'90%' }}>
-          <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
+          <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
             Eqalizer
           </Text>
           </View>
           <View style={{ alignItems: "flex-end", width: "10%" }}>
-          <MaterialIcons name="equalizer" size={28} color="black" />
+          <MaterialIcons name="equalizer" size={28} color="white" />
           </View>
         </View>
         
         </TouchableOpacity>
-{/*----------------------------------------------------Download Quality Section---------------------------------------------------------------- */}      
+{/*------------------------------------------Download Quality Section---------------------------------------------------------------- */}      
         
         
           <View style={styles.list}>
             <View style={{ color: "black", width:'90%' }}>
-          <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
+          <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
             Download Quality
           </Text>
           </View>
@@ -79,34 +79,34 @@ const Settings = (props) => {
             </TouchableOpacity>
 
             <TouchableOpacity>
-            <MaterialCommunityIcons name="quality-medium" size={28} color="black" />
+            <MaterialCommunityIcons name="quality-medium" size={28} color="white" />
             </TouchableOpacity>
 
             <TouchableOpacity>
-            <MaterialCommunityIcons name="quality-high" size={28} color="black" />
+            <MaterialCommunityIcons name="quality-high" size={28} color="white" />
             </TouchableOpacity>
 
           </View>
           </View>
           <View style={{ alignItems: "flex-end", width: "10%" }}>
-          <MaterialCommunityIcons name="equalizer-outline" size={28} color="black" />
+          <MaterialCommunityIcons name="equalizer-outline" size={28} color="white" />
           </View>
         </View>
         
     
-{/*----------------------------------------------------Streaming Quality Section---------------------------------------------------------------- */}     
+{/*--------------------------------------Streaming Quality Section---------------------------------------------------------------- */}     
         
         
           <View style={styles.list}>
             <View style={{ color: "black", width:'90%' }}>
-          <Text style={{ color: "black" }}>
+          <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
             Streaming Quality
           </Text>
           </View>
           <View style={{ alignItems: "flex-end", width: "10%" }}>
             <View style={{flexDirection:'row'}}>
             <TouchableOpacity>
-              <MaterialCommunityIcons name="quality-low" size={28} color="black" />
+              <MaterialCommunityIcons name="quality-low" size={28} color="white" />
             </TouchableOpacity>
 
             <TouchableOpacity>
@@ -114,7 +114,7 @@ const Settings = (props) => {
             </TouchableOpacity>
 
             <TouchableOpacity>
-            <MaterialCommunityIcons name="quality-high" size={28} color="black" />
+            <MaterialCommunityIcons name="quality-high" size={28} color="white" />
             </TouchableOpacity>
 
           </View>
@@ -122,7 +122,7 @@ const Settings = (props) => {
         </View>
         
      
-{/*--------------------------------------------------------------Data Usage Section--------------------------------------------------------*/}
+{/*--------------------------------------------------------------Data Usage Section----------------------------------------------------------------*/}
         
         <View style={{flexDirection:'row', alignItems:'center'}}>
           <Text style={{color:'white',padding:5, fontWeight:'bold',fontSize:18}}>
@@ -132,13 +132,13 @@ const Settings = (props) => {
               218.90Mb
           </Text>
         </View>
- {/*-----------------------------------------------------------Data Saver Section----------------------------------------------------------*/}       
+ {/*-----------------------------------------------------------Data Saver Section----------------------------------------------------------------*/}       
         <View style={styles.list}>
           <View style={{ color: "black", width:'80%' }}>
-            <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
+            <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
               Data Saver
             </Text>
-            <Text style={{color:'#3e3e3e', fontSize:13}}>
+            <Text style={{color:'white', fontSize:13}}>
               Sets your music quality to low and disables artist canvaces
             </Text>
           </View>
@@ -155,7 +155,7 @@ const Settings = (props) => {
 {/*-----------------------------------------------------------Data Usage Warning Section----------------------------------------------------------*/}       
         <View style={styles.list}>
           <View style={{ color: "black", width:'90%' }}>
-            <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>Data Usage Warning</Text>
+            <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>Data Usage Warning</Text>
           </View>
           <View style={{ alignItems: "flex-end", width: "10%", padding:5}}>
           <Switch
@@ -167,7 +167,7 @@ const Settings = (props) => {
             />
           </View>
         </View>
-{/*------------------------------------------------------Connect to apps header Section----------------------------------------------------------*/}       
+{/*------------------------------------------------------Connect to apps header----------------------------------------------------------*/}       
         <Text style={{color:'white',padding:5, fontWeight:'bold',fontSize:18}}>
           Connect to Apps
         </Text>
@@ -175,17 +175,17 @@ const Settings = (props) => {
         <TouchableOpacity onPress={() => props.navigation.navigate('Navigation')}>
         <View style={styles.list}>
           <View style={{ color: "black", width:'80%' }}>
-            <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
+            <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
             Navigation
             </Text>
-            <Text style={{color:'#3e3e3e', fontSize:13}}>
+            <Text style={{color:'white', fontSize:13}}>
               Connect to navigation app
             </Text>
           </View>
           
           <View style={{ alignItems: "flex-end", width: "20%", padding:6 }}>
           
-          <Feather name='navigation' size={24} color="black"/>
+          <Feather name='navigation' size={24} color="white"/>
           </View>
         </View>
         </TouchableOpacity>
@@ -193,10 +193,10 @@ const Settings = (props) => {
         
 <View style={styles.list}>
           <View style={{ color: "black", width:'80%' }}>
-            <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
+            <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
                Car Mode
             </Text>
-            <Text style={{color:'#3e3e3e', fontSize:13}}>
+            <Text style={{color:'white', fontSize:13}}>
               Turns on your Auto Play
             </Text>
           </View>
@@ -214,10 +214,10 @@ const Settings = (props) => {
 <TouchableOpacity onPress={()=>{}}>
 <View style={styles.list}>
           <View style={{ color: "black", width:'80%' }}>
-            <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
+            <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
                Sleep Mode
             </Text>
-            <Text style={{color:'#3e3e3e', fontSize:13}}>
+            <Text style={{color:'white', fontSize:13}}>
               Set timer for your music
             </Text>
           </View>
@@ -229,7 +229,7 @@ const Settings = (props) => {
               onValueChange={toggleSwitch}
               value={isEnabled}
             />
-            <Text style={{paddingRight:7, fontSize:12}}>
+            <Text style={{paddingRight:7, fontSize:12, color:'white'}}>
               10 mins
             </Text>
           </View>
@@ -243,33 +243,34 @@ const Settings = (props) => {
 <TouchableOpacity onPress={() => props.navigation.navigate('CustomerSupport')}>
         <View style={styles.list}>
           <View style={{ color: "black", width:'80%' }}>
-            <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
+            <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
             Customer Care
             </Text>
           </View>
           
           <View style={{ alignItems: "flex-end", width: "20%", padding:6 }}>
           
-          <AntDesign name="customerservice" size={24} color="black" />
+          <AntDesign name="customerservice" size={24} color="white" />
           </View>
         </View>
         </TouchableOpacity>
-
+{/*------------------------------------------Updates------------------------------------------------------------------ */}
         <TouchableOpacity onPress={() => props.navigation.navigate('Updates')}>
         <View style={styles.list}>
           <View style={{ color: "black", width:'80%' }}>
-            <Text style={{ color: "black", fontSize:16,fontWeight:'600' }}>
+            <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
             Updates
             </Text>
           </View>
           
           <View style={{ alignItems: "flex-end", width: "20%", padding:6 }}>
           
-          <MaterialIcons name="update" size={28} color="black" />
+          <MaterialIcons name="update" size={28} color="white" />
           </View>
         </View>
         </TouchableOpacity>
         </ScrollView>
+{/*---------------------------------------End------------------------------------------------------------- */}
       </View>
       
     );
@@ -303,7 +304,7 @@ const styles = StyleSheet.create({
   list:{
     width:'100%',
     borderBottomWidth:2,
-    backgroundColor:'grey',
+    backgroundColor:'#111111',
     height:60,
     paddingLeft:5,
     flexDirection:'row',

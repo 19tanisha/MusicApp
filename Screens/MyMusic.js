@@ -7,6 +7,7 @@ import MyFavs from '../MyMusic/MyFavs';
 const MyMusic = (props) => {
     return (
       <View style={styles.conatiner}>
+{/*-------------------------------------Header Section --------------------------------------------------------------------------------------------*/}
         <View style={styles.header}>
          
         <View style={styles.mainContainer}>
@@ -15,6 +16,7 @@ const MyMusic = (props) => {
             </Text>
         </View>
         </View>
+{/*------------------------------------My Downloads ------------------------------------------------------------------------------------------------*/}
         <TouchableOpacity activeOpacity={0.5} onPress={()=> props.navigation.navigate('MyDownloads')}
         style={{width:'100%', height:50}}>
           <View style={styles.list}>
@@ -30,11 +32,11 @@ const MyMusic = (props) => {
             </Text>
             </View>
             <View style={{width:'10%', justifyContent:'center', alignItems:'flex-end'}}>
-            <Ionicons name='play-circle-outline' size={35}/>
+            <AntDesign name='right' size={24}/>
             </View>
           </View>
         </TouchableOpacity>
-        
+{/*-----------------------------------My favorites -------------------------------------------------------------------------------------------------*/}       
         <TouchableOpacity activeOpacity={0.5} onPress={()=> props.navigation.navigate('MyFavs')}
         style={{width:'100%', height:50}}>
           <View style={styles.list}>
@@ -54,7 +56,7 @@ const MyMusic = (props) => {
             </View>
           </View>
         </TouchableOpacity>
-        
+{/*------------------------------------My Library ---------------------------------------------------------------------------------------------------*/}       
         <TouchableOpacity activeOpacity={0.5} onPress={()=> props.navigation.navigate('MyLibrary')}
         style={{width:'100%', height:50}}>
           <View style={styles.list}>
@@ -74,7 +76,7 @@ const MyMusic = (props) => {
             </View>
             </View>
         </TouchableOpacity>
-        
+{/*---------------------------------End Section ----------------------------------------------------------------------------------------------------*/}       
       </View>
     );
 }
@@ -100,7 +102,8 @@ const styles = StyleSheet.create({
     backgroundColor:'#ff8303',
     justifyContent:'center',
     alignItems:'center',
-    flexDirection:'row'
+    flexDirection:'row',
+    marginBottom:15
   },
   list:{
     width:'100%',

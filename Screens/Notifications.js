@@ -4,6 +4,7 @@ import { Ionicons } from "react-native-vector-icons";
 const Notification = ({navigation}) => {
     return (
       <View style={styles.conatiner}>
+{/*---------------------------------------Header Section----------------------------------------------------------------------------------------------- */}
         <View style={styles.header}>
           <View>
           <TouchableOpacity onPress={() => navigation.navigate("Home")}>
