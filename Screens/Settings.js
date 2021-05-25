@@ -38,6 +38,9 @@ const Settings = (props) => {
         <View style={styles.list}>
           <View style={{ color: "black", width:'90%' }}>
             <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>Language Preference</Text>
+            <Text style={{color:'grey', fontSize:13}}>
+              Set your language.
+            </Text>
           </View>
           <View style={{ alignItems: "flex-end", width: "10%" }}>
             <FontAwesome5 name="language" size={28} color="white" />
@@ -56,6 +59,9 @@ const Settings = (props) => {
           <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
             Eqalizer
           </Text>
+          <Text style={{color:'grey', fontSize:13}}>
+              Manipulate frequency
+          </Text>
           </View>
           <View style={{ alignItems: "flex-end", width: "10%" }}>
           <MaterialIcons name="equalizer" size={28} color="white" />
@@ -71,6 +77,9 @@ const Settings = (props) => {
           <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
             Download Quality
           </Text>
+          <Text style={{color:'grey', fontSize:13}}>
+              Set your download quality.
+            </Text>
           </View>
           <View style={{ alignItems: "flex-end", width: "10%" }}>
             <View style={{flexDirection:'row'}}>
@@ -102,6 +111,9 @@ const Settings = (props) => {
           <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
             Streaming Quality
           </Text>
+          <Text style={{color:'grey', fontSize:13}}>
+              Set your streaming quality
+            </Text>
           </View>
           <View style={{ alignItems: "flex-end", width: "10%" }}>
             <View style={{flexDirection:'row'}}>
@@ -138,7 +150,8 @@ const Settings = (props) => {
             <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
               Data Saver
             </Text>
-            <Text style={{color:'white', fontSize:13}}>
+            
+            <Text style={{color:'grey', fontSize:13}}>
               Sets your music quality to low and disables artist canvaces
             </Text>
           </View>
@@ -156,6 +169,9 @@ const Settings = (props) => {
         <View style={styles.list}>
           <View style={{ color: "black", width:'90%' }}>
             <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>Data Usage Warning</Text>
+            <Text style={{color:'grey', fontSize:13}}>
+              Warns about excess data usage
+            </Text>
           </View>
           <View style={{ alignItems: "flex-end", width: "10%", padding:5}}>
           <Switch
@@ -178,7 +194,7 @@ const Settings = (props) => {
             <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
             Navigation
             </Text>
-            <Text style={{color:'white', fontSize:13}}>
+            <Text style={{color:'grey', fontSize:13}}>
               Connect to navigation app
             </Text>
           </View>
@@ -196,7 +212,7 @@ const Settings = (props) => {
             <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
                Car Mode
             </Text>
-            <Text style={{color:'white', fontSize:13}}>
+            <Text style={{color:'grey', fontSize:13}}>
               Turns on your Auto Play
             </Text>
           </View>
@@ -217,7 +233,7 @@ const Settings = (props) => {
             <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
                Sleep Mode
             </Text>
-            <Text style={{color:'white', fontSize:13}}>
+            <Text style={{color:'grey', fontSize:13}}>
               Set timer for your music
             </Text>
           </View>
@@ -246,6 +262,9 @@ const Settings = (props) => {
             <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
             Customer Care
             </Text>
+            <Text style={{color:'grey', fontSize:13}}>
+              Contact us
+            </Text>
           </View>
           
           <View style={{ alignItems: "flex-end", width: "20%", padding:6 }}>
@@ -260,6 +279,9 @@ const Settings = (props) => {
           <View style={{ color: "black", width:'80%' }}>
             <Text style={{ color: "white", fontSize:16,fontWeight:'600' }}>
             Updates
+            </Text>
+            <Text style={{color:'grey', fontSize:13}}>
+            Check your updates
             </Text>
           </View>
           
@@ -305,7 +327,7 @@ const styles = StyleSheet.create({
     width:'100%',
     borderBottomWidth:2,
     backgroundColor:'#111111',
-    height:60,
+    height:70,
     paddingLeft:5,
     flexDirection:'row',
     alignItems:'center'

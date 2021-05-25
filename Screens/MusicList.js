@@ -1,42 +1,46 @@
-import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
-import { Ionicons,Octicons, MaterialIcons } from 'react-native-vector-icons';
+import React from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
+import { Ionicons, MaterialIcons, AntDesign} from "react-native-vector-icons";
 
-const MusicList = ({name, details}) => {
-    return (
-        <View style={styles.container}>
-        <Image stye={{}}/>
-        <View style={{ width: "100%" ,padding:10}}>
-          <Text style={{ fontSize: 20, fontWeight: "bold", color: "#929695" }}>
-            {name}
-          </Text>
-          <Text style={{ fontSize: 15, color: "orange" }}>{details}</Text>
-        </View>
-
-        <View
-          style={{
-            width: "20%",
-            flexDirection: "row",
-            justifyContent: "flex-end",
-          }}>
-
-          
+const MusicList = ({ name, details }) => {
+  return (
+    <View style={styles.container}>
+         <View style={{ width: "90%", flexDirection: "row",alignItems:'center' }}>
+           <View style={{width:'10%',paddingLeft:10}}>
+         <Ionicons name="musical-notes-sharp" size={30} color="#929695" />
+         </View>
+        <View style={{width:'90%', marginLeft:15}}>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.details}>{details}</Text>
         </View>
       </View>
-    )
-}
 
-export default MusicList
+      <View style={{ width: "10%", alignItems: "flex-end",paddingRight:10 }}>
+        <AntDesign name="heart" size={24} color='#929695' />
+      </View>
+      </View>
+    
+  );
+};
+
+export default MusicList;
 
 const styles = StyleSheet.create({
-    container:{
-        height: 150,
-        width: 150,
-        backgroundColor: "#2D2D2D",
-        borderBottomWidth: 0.3,
-        paddingHorizontal:20,
-        flexDirection:'row',
-        alignItems:'center',
-        margin:3
-    }
-})
+  container: {
+    height: 60,
+    width: '100%',
+    backgroundColor: "#2D2D2D",
+    borderBottomWidth: 0.3,
+    flexDirection: "row",
+    alignItems: "center",
+    borderBottomWidth:0.5
+  },
+  name: {
+    fontSize: 18,
+    fontWeight: "700",
+    color: "orange",
+  },
+  details: {
+    color: "#929695",
+  },
+});

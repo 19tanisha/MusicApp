@@ -1,9 +1,9 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View , ScrollView} from "react-native";
 import { RadioButton } from "react-native-paper";
 import { Ionicons } from "react-native-vector-icons";
-
+import MusicList from '../Screens/MusicList'
 
 const MyFavs = (props) => {
     return (
@@ -29,8 +29,29 @@ const MyFavs = (props) => {
           <Text style={styles.headertext}>My Favorites</Text>
         </View>
 
-        <View style={{ width: "10%" }}></View>
+        <View style={{ width: "10%", justifyContent: "center", paddingLeft: 5 }}>
+        <Ionicons name="search" size={30} color="black" />
+        </View>
       </View>
+      <ScrollView style={{width:'100%'}}>
+  
+  <MusicList name='Perfect' details='Ed Sheeran'/>
+  <MusicList name='Without Me' details='Halsey'/>
+  <MusicList name='Thinking Out Loud' details='Ed Sheeran'/>
+  <MusicList name='Love Story' details='Taylor Swift'/>
+  <MusicList name='Lag ja Gale' details='Lata Mangeshkar'/>
+  <MusicList name='My Heart Will Go On' details='Celine Dion'/>
+  <MusicList name='Perfect' details='Ed Sheeran'/>
+  <MusicList name='Without Me' details='Halsey'/>
+  <MusicList name='Thinking Out Loud' details='Ed Sheeran'/>
+  <MusicList name='Love Story' details='Taylor Swift'/>
+  <MusicList name='Lag ja Gale' details='Lata Mangeshkar'/>
+  <MusicList name='My Heart Will Go On' details='Celine Dion'/>
+  
+ 
+
+</ScrollView>
+
         </View>
     )
 }

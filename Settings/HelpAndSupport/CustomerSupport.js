@@ -35,6 +35,7 @@ const CustomerSupport = (props) => {
       <ScrollView style={{width:'100%'}} contentContainerStyle={{alignItems:'center'}}>
 {/*-------------------------------------------------Contact Us-------------------------------------------------------------------------------------- */}
         <Text style={{color:'white', fontSize:20,fontWeight:'700', marginTop:10}}>Contact Us</Text>
+{/*--------------------------------------------------Contact Us body----------------------------------------------------------------------------------------------------------------- */}
         <TouchableOpacity onPress={()=>{}}
         style={{width:'100%',paddingLeft:5,flexDirection:'row',marginTop:10}}
         >
@@ -59,14 +60,13 @@ const CustomerSupport = (props) => {
         <Text style={{color:'white', fontSize:20,fontWeight:'700', marginTop:10,marginBottom:10}}>
           FAQ
         </Text>
-
 {/*---------------------------------------------------FAQ body----------------------------------------------------------------------------------------------------------------- */}
         <View style={{width:'100%'}}>
 {/*-----------------------------------------Couldn't download songs?--------------------------------------------------------------------------------------------------------------- */}
           <TouchableOpacity style={styles.box}>
-          <View >
+          <View>
             <Text style={{color:'white'}}>
-              Couldnt downldoad songs?
+              Couldn't download songs?
             </Text>
           </View>
           </TouchableOpacity>
@@ -74,7 +74,7 @@ const CustomerSupport = (props) => {
           <TouchableOpacity style={styles.box}>
           <View>
             <Text style={{color:'white'}}>
-              Equalizer not working??
+              Equalizer not working?
             </Text>
           </View>
           </TouchableOpacity>
@@ -113,6 +113,7 @@ const CustomerSupport = (props) => {
 {/*----------------------------------Textinput------------------------------------------------------------------------------------------------------*/}
          </View>
          <TextInput placeholder='Enter your Query...' placeholderTextColor='orange' style={styles.queryinp}/>
+
 {/*----------------------------------Submit Button------------------------------------------------------------------------------------------------------------------------------ */}        
          <TouchableOpacity style={styles.submit}>
            <View> 
