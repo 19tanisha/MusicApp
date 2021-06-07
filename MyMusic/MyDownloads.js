@@ -35,26 +35,60 @@ const MyDownloads = (props) => {
         <Ionicons name="search" size={30} color="black" />
         </View>
       </View>
-
+{/*-----------------------------------Music List---------------------------------------------------------------------------------------------------------------------------------------------------------- */}
         <ScrollView style={{width:'100%'}}>
-  
+
+            <TouchableOpacity>
             <MusicList name='Perfect' details='Ed Sheeran'/>
-            <MusicList name='Without Me' details='Halsey'/>
-            <MusicList name='Thinking Out Loud' details='Ed Sheeran'/>
-            <MusicList name='Love Story' details='Taylor Swift'/>
-            <MusicList name='Lag ja Gale' details='Lata Mangeshkar'/>
-            <MusicList name='My Heart Will Go On' details='Celine Dion'/>
-            <MusicList name='Perfect' details='Ed Sheeran'/>
-            <MusicList name='Without Me' details='Halsey'/>
-            <MusicList name='Thinking Out Loud' details='Ed Sheeran'/>
-            <MusicList name='Love Story' details='Taylor Swift'/>
-            <MusicList name='Lag ja Gale' details='Lata Mangeshkar'/>
-            <MusicList name='My Heart Will Go On' details='Celine Dion'/>
+            </TouchableOpacity>
             
+            <TouchableOpacity>
+            <MusicList name='Without Me' details='Halsey'/>
+            </TouchableOpacity>
+            
+            <TouchableOpacity>
+            <MusicList name='Thinking Out Loud' details='Ed Sheeran'/>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+            <MusicList name='Love Story' details='Taylor Swift'/>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+            <MusicList name='Lag ja Gale' details='Lata Mangeshkar'/>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+            <MusicList name='My Heart Will Go On' details='Celine Dion'/>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+            <MusicList name='Perfect' details='Ed Sheeran'/>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+            <MusicList name='Without Me' details='Halsey'/>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+            <MusicList name='Thinking Out Loud' details='Ed Sheeran'/>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+            <MusicList name='Love Story' details='Taylor Swift'/>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+            <MusicList name='Lag ja Gale' details='Lata Mangeshkar'/>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+            <MusicList name='My Heart Will Go On' details='Celine Dion'/>
+            </TouchableOpacity>
            
         
         </ScrollView>
-        
+{/*--------------------------------------END------------------------------------------------------------------------------------------------------------------------------------------------------------------- */}        
         
         </View>
        

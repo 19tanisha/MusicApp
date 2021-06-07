@@ -42,7 +42,7 @@ const Account = (props) => {
           Display Name
         </Text>
         <TextInput
-          placeholder='Tanisha Thakur'
+          placeholder='Tanya Thakur'
           placeholderTextColor='orange'
           style={styles.userinput}
         />
@@ -59,7 +59,7 @@ const Account = (props) => {
           Username
         </Text>
         <TextInput
-          placeholder='tanisha19'
+          placeholder='tanya19'
           placeholderTextColor='orange'
           style={styles.userinput}
         />
@@ -75,7 +75,7 @@ const Account = (props) => {
           Email
         </Text>
         <TextInput
-          placeholder='tanisha@gmail.com'
+          placeholder='tanya@gmail.com'
           placeholderTextColor='orange'
           style={styles.userinput}
         />
@@ -91,7 +91,7 @@ const Account = (props) => {
           Contact no.
         </Text>
         <TextInput
-          placeholder='9145439518'
+          placeholder='9145439916'
           placeholderTextColor='orange'
           style={styles.userinput}
         />

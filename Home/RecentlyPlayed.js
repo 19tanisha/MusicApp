@@ -95,18 +95,14 @@ const styles = StyleSheet.create({
 
 export default RecentlyPlayed;*/
 
-import React, { Component } from "react";
+import React, { Component,useState } from "react";
 import { ImageBackground } from "react-native";
-import { Text, View, StyleSheet, FlatList } from "react-native";
-import { Image } from "react-native";
+import { Text, View, StyleSheet, FlatList,TouchableOpacity } from "react-native";
 import { Surface } from "react-native-paper";
 import {AntDesign} from 'react-native-vector-icons'
-export class RecentlyPlayed extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    let categories = [
+export default function RecentlyPlayed (props){
+ 
+   const [songname, setSongname] = useState([
       {
         name: "Gorgeous",
         img: {
@@ -163,7 +159,7 @@ export class RecentlyPlayed extends Component {
         },
         id: "8",
       },
-    ];
+    ]);
     return (
       <View style={styles.container}>
         <Text
@@ -179,10 +175,11 @@ export class RecentlyPlayed extends Component {
         <FlatList
           
           keyExtractor={(item) => item.id}
-          data={categories}
+          data={songname}
           horizontal={true}
           renderItem={({ item, index }) => {
             return (
+              <TouchableOpacity onPress={()=> props.navigation.navigate('MusicPlayer',{item})}>
               <Surface style={styles.surface}>
                 <ImageBackground
                 im
@@ -197,13 +194,14 @@ export class RecentlyPlayed extends Component {
                   {item.name}
                 </Text>
               </Surface>
+              </TouchableOpacity>
             );
           }}
         />
       </View>
     );
   }
-}
+
 
 const styles = StyleSheet.create({
   container: {
@@ -222,4 +220,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RecentlyPlayed;

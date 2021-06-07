@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ImageBackground } from "react-native";
-import { Text, View, StyleSheet, FlatList } from "react-native";
+import { Text, View, StyleSheet, FlatList,TouchableOpacity} from "react-native";
 import { Image } from "react-native";
 import { Surface } from "react-native-paper";
 
@@ -58,6 +58,7 @@ export class Trending extends Component {
           horizontal={true}
           renderItem={({ item, index }) => {
             return (
+              <TouchableOpacity>
               <Surface style={styles.surface}>
                 <Image
                   style={{ width: 105, height: 105, borderRadius: 10 }}
@@ -69,6 +70,7 @@ export class Trending extends Component {
                   {item.name}
                 </Text>
               </Surface>
+              </TouchableOpacity>
             );
           }}
         />

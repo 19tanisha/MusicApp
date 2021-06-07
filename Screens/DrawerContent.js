@@ -46,9 +46,9 @@ export function DrawerContent(props) {
                 size={60}
               />
               <View style={{ marginLeft: 10 }}>
-                <Title style={{ color: "#ff8303" }}>Tanisha Thakur</Title>
+                <Title style={{ color: "#ff8303" }}>Tanya Thakur</Title>
                 <Caption style={{ fontSize: 15, color: "grey" }}>
-                  @tanisha19
+                  @tanya19
                 </Caption>
               </View>
             </View>

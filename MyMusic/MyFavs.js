@@ -9,6 +9,7 @@ const MyFavs = (props) => {
     return (
         
         <View style={styles.container}>
+{/*--------------------------------------Header Section------------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
             <View style={styles.header}>
         <View
           style={{ width: "10%", justifyContent: "center", paddingLeft: 5 }}
@@ -33,25 +34,59 @@ const MyFavs = (props) => {
         <Ionicons name="search" size={30} color="black" />
         </View>
       </View>
+{/*--------------------------------------Music list------------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
       <ScrollView style={{width:'100%'}}>
-  
+  <TouchableOpacity>
   <MusicList name='Perfect' details='Ed Sheeran'/>
+  </TouchableOpacity>
+
+  <TouchableOpacity>
   <MusicList name='Without Me' details='Halsey'/>
+  </TouchableOpacity>
+
+  <TouchableOpacity>
   <MusicList name='Thinking Out Loud' details='Ed Sheeran'/>
+  </TouchableOpacity>
+
+  <TouchableOpacity>
   <MusicList name='Love Story' details='Taylor Swift'/>
+  </TouchableOpacity>
+
+  <TouchableOpacity>
   <MusicList name='Lag ja Gale' details='Lata Mangeshkar'/>
+  </TouchableOpacity>
+
+  <TouchableOpacity>
   <MusicList name='My Heart Will Go On' details='Celine Dion'/>
+  </TouchableOpacity>
+
+  <TouchableOpacity>
   <MusicList name='Perfect' details='Ed Sheeran'/>
+  </TouchableOpacity>
+
+  <TouchableOpacity>
   <MusicList name='Without Me' details='Halsey'/>
+  </TouchableOpacity>
+
+  <TouchableOpacity>
   <MusicList name='Thinking Out Loud' details='Ed Sheeran'/>
+  </TouchableOpacity>
+
+  <TouchableOpacity>
   <MusicList name='Love Story' details='Taylor Swift'/>
+  </TouchableOpacity>
+
+  <TouchableOpacity>
   <MusicList name='Lag ja Gale' details='Lata Mangeshkar'/>
+  </TouchableOpacity>
+
+  <TouchableOpacity>
   <MusicList name='My Heart Will Go On' details='Celine Dion'/>
-  
+  </TouchableOpacity>
  
 
 </ScrollView>
-
+{/*--------------------------------------END------------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
         </View>
     )
 }

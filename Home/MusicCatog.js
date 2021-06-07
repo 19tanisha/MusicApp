@@ -1,15 +1,10 @@
-import React, { Component } from "react";
-import { ImageBackground } from "react-native";
-import { Text, View, StyleSheet, FlatList } from "react-native";
+import React, { Component, useState } from "react";
+import { Text, View, StyleSheet, FlatList,TouchableOpacity } from "react-native";
 import { Image } from "react-native";
 import { Surface } from "react-native-paper";
 
-export class MusicCatog extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    let categories = [
+export default function MusicCatog (props){
+    const [songname,setSongname] = useState([
       {
         name: "Rock",
         img: {
@@ -45,7 +40,7 @@ export class MusicCatog extends Component {
       },
         id: "5",
       },
-    ];
+    ]);
     return (
       <View style={styles.container}>
         <Text
@@ -61,10 +56,11 @@ export class MusicCatog extends Component {
         <FlatList
           
           keyExtractor={(item) => item.id}
-          data={categories}
+          data={songname}
           horizontal={true}
           renderItem={({ item, index }) => {
             return (
+              <TouchableOpacity onPress={()=>props.navigation.navigate('MusicPlayer',{item})}>
               <Surface style={styles.surface}>
                 <Image
                   style={{ width: 105, height: 105, borderRadius: 10 }}
@@ -76,13 +72,14 @@ export class MusicCatog extends Component {
                   {item.name}
                 </Text>
               </Surface>
+              </TouchableOpacity>
             );
           }}
         />
       </View>
     );
   }
-}
+
 
 const styles = StyleSheet.create({
   container: {
@@ -101,4 +98,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MusicCatog;
