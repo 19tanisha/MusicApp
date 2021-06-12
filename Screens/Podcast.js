@@ -1,27 +1,22 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Ionicons } from "react-native-vector-icons";
-import CarouselPodcast from "../CustomList.js/CarouselPodcast";
-
-const Podcast = ({ navigation }) => {
+import PodcastCaraousel from "../CustomList.js/PodcastCaraousel";
+import { LinearGradient } from "expo-linear-gradient";
+import PopularRadioList from "../CustomList.js/PopularRadioList";
+const Podcast = (props) => {
   return (
-    <View style={styles.conatiner}>
-      {/*---------------------------------------Header Section-------------------------------------------------------------------------------------------- */}
-      <View style={styles.header}>
-        <View>
-          <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-            <Ionicons name="arrow-back" size={28} color="black" />
-          </TouchableOpacity>
-        </View>
-        <View style={styles.mainContainer}>
-          <Text style={{ color: "black", fontSize: 22, fontWeight: "bold" }}>
-            Podcast
-          </Text>
-        </View>
-      </View>
+    <LinearGradient
+      style={styles.conatiner}
+      colors={["#e1701a", "#ff8303", "#ff8303", "orange", "orange"]}
+    >
+      <Text style={{ fontSize: 30, color: "white", fontWeight: "bold" }}>
+        Podcast
+      </Text>
       {/*-------------------------------------Content--------------------------------------------------------------------------------------------------------------------- */}
-      <CarouselPodcast />
-    </View>
+      <PodcastCaraousel />
+      <PopularRadioList navigation={props.navigation} />
+    </LinearGradient>
   );
 };
 

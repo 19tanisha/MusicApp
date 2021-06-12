@@ -3,15 +3,7 @@ import { Text, View, FlatList, StyleSheet, Image } from "react-native";
 
 import { TouchableOpacity } from "react-native";
 
-import {
-  Ionicons,
-  Feather,
-  SimpleLineIcons,
-  MaterialIcons,
-  MaterialCommunityIcons,
-  FontAwesome,
-  AntDesign,
-} from "react-native-vector-icons";
+import { FontAwesome, AntDesign } from "react-native-vector-icons";
 
 export default function FavList(props) {
   const [songname, setSongname] = useState([
@@ -82,7 +74,7 @@ export default function FavList(props) {
     },
   ]);
   return (
-    <View style={StyleSheet.container}>
+    <View style={styles.container}>
       <FlatList
         data={songname}
         keyExtractor={(item) => item.id}

@@ -9,7 +9,7 @@ import {
 import { Image } from "react-native";
 import { Surface } from "react-native-paper";
 
-export default function TodaysPick(props) {
+export default function PopularRadioList(props) {
   const [songname, setSongname] = useState([
     {
       name: "Attention",
@@ -220,10 +220,10 @@ export default function TodaysPick(props) {
           fontSize: 20,
           fontWeight: "bold",
           color: "white",
-          paddingLeft: 5,
+          paddingLeft: 15,
         }}
       >
-        Today's Pick
+        Popular radio
       </Text>
       <FlatList
         keyExtractor={(item) => item.id}
@@ -235,10 +235,22 @@ export default function TodaysPick(props) {
               onPress={() => props.navigation.navigate("MusicPlayer", { item })}
             >
               <Surface style={styles.surface}>
-                <Image
-                  style={{ width: 105, height: 105, borderRadius: 10 }}
-                  source={item.img}
-                />
+                <View
+                  style={{
+                    width: 110,
+                    height: 110,
+                    elevation: 20,
+                    borderRadius: 200,
+                    backgroundColor: "black",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Image
+                    style={{ width: 105, height: 105, borderRadius: 200 }}
+                    source={item.img}
+                  />
+                </View>
                 <Text
                   style={{ color: "white", fontSize: 15, fontWeight: "700" }}
                 >
@@ -262,7 +274,7 @@ const styles = StyleSheet.create({
   surface: {
     width: 120,
     padding: 5,
-    backgroundColor: "#2d2d2d",
+    backgroundColor: "transparent",
     margin: 3,
     justifyContent: "center",
     alignItems: "center",
