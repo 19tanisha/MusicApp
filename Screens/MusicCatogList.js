@@ -8,6 +8,7 @@ import {
   ImageBackground,
   Image,
 } from "react-native";
+import { Ionicons, SimpleLineIcons } from "react-native-vector-icons";
 
 const MusicCatogList = ({ navigation, route }) => {
   const { item } = route.params;
@@ -33,26 +34,59 @@ const MusicCatogList = ({ navigation, route }) => {
           justifyContent: "space-between",
         }}
         resizeMode="cover"
-        blurRadius={5}
+        blurRadius={10}
       >
         <View
           style={{
             width: "100%",
             height: 30,
             padding: 20,
-            height: "30%",
+            height: "20%",
+
+            alignItems: "center",
+            flexDirection: "row",
           }}
         >
-          <Text
+          <View
             style={{
-              color: "white",
-              fontSize: 35,
-              fontWeight: "bold",
-              paddingTop: 20,
+              width: "15%",
             }}
           >
-            {item.name}
-          </Text>
+            <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+              <Ionicons
+                name="arrow-back-circle-sharp"
+                size={45}
+                color="white"
+              />
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              width: "70%",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text
+              style={{
+                color: "white",
+                fontSize: 40,
+                fontWeight: "bold",
+              }}
+            >
+              {item.name}
+            </Text>
+          </View>
+          <View
+            style={{
+              width: "15%",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              paddingLeft: 15,
+            }}
+          >
+            <SimpleLineIcons name="playlist" size={26} color="white" />
+          </View>
         </View>
         <View style={styles.songbg}>
           <FlatList
@@ -145,7 +179,7 @@ const styles = StyleSheet.create({
   songbg: {
     padding: 10,
     alignItems: "center",
-    height: "70%",
+    height: "80%",
     backgroundColor: "transparent",
   },
 });

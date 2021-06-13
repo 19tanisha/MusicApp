@@ -184,7 +184,7 @@ export default function RecentlyPlayed(props) {
           paddingLeft: 5,
         }}
       >
-        Recently Played
+        RECENTLY PLAYED
       </Text>
       <FlatList
         keyExtractor={(item) => item.id}
@@ -195,7 +195,7 @@ export default function RecentlyPlayed(props) {
             <TouchableOpacity
               onPress={() => props.navigation.navigate("MusicPlayer", { item })}
             >
-              <Surface style={styles.surface}>
+              <View style={styles.surface}>
                 <ImageBackground
                   im
                   style={{
@@ -213,7 +213,7 @@ export default function RecentlyPlayed(props) {
                 >
                   {item.name}
                 </Text>
-              </Surface>
+              </View>
             </TouchableOpacity>
           );
         }}
@@ -229,9 +229,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   surface: {
-    width: 130,
+    width: 140,
     padding: 5,
-    backgroundColor: "black",
+    backgroundColor: "#2d2d2d",
     margin: 3,
     justifyContent: "center",
     alignItems: "center",

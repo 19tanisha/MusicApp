@@ -15,11 +15,11 @@ import {
   MaterialCommunityIcons,
   FontAwesome,
   Ionicons,
-  MaterialIcons
+  MaterialIcons,
 } from "react-native-vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import {ProgressBar, Colors} from 'react-native-paper'
+import { ProgressBar, Colors } from "react-native-paper";
 
 export function DrawerContent(props) {
   return (
@@ -29,43 +29,40 @@ export function DrawerContent(props) {
       end={{ x: 1, y: 1 }}
       style={{ flex: 1, backgroundColor: "yellow" }}
     >*/
-    <View style={{flex:1, backgroundColor:'#2D2D2D'}}>
+    <View style={{ flex: 1, backgroundColor: "#2D2D2D" }}>
       <DrawerContentScrollView {...props}>
-  {/*-------------------------------Drawer Content------------------------------------------------------------------------------------------------- */}      
+        {/*-------------------------------Drawer Content------------------------------------------------------------------------------------------------- */}
         <View style={styles.drawerContent}>
-  {/*-------------------------------User Info------------------------------------------------------------------------------------------------------- */}
+          {/*-------------------------------User Info------------------------------------------------------------------------------------------------------- */}
           <View style={styles.userinfo}>
-            <TouchableOpacity activeOpacity={0.5}
-            onPress={()=> props.navigation.navigate('Account')}
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={() => props.navigation.navigate("Account")}
             >
-            <View style={{ flexDirection: "row" }}>
-              <Avatar.Image
-                source={{
-                  uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRYGXBks17207cStyw8yIWqeX4R7xKLXgHjw&usqp=CAU",
-                }}
-                size={60}
-              />
-              <View style={{ marginLeft: 10 }}>
-                <Title style={{ color: "#ff8303" }}>Tanya Thakur</Title>
-                <Caption style={{ fontSize: 15, color: "grey" }}>
-                  @tanya19
-                </Caption>
+              <View style={{ flexDirection: "row" }}>
+                <Avatar.Image
+                  source={{
+                    uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRYGXBks17207cStyw8yIWqeX4R7xKLXgHjw&usqp=CAU",
+                  }}
+                  size={60}
+                />
+                <View style={{ marginLeft: 10 }}>
+                  <Title style={{ color: "#ff8303" }}>Tanisha Thakur</Title>
+                  <Caption style={{ fontSize: 15, color: "grey" }}>
+                    @tanisha19
+                  </Caption>
+                </View>
               </View>
-            </View>
             </TouchableOpacity>
           </View>
-{/*-------------------------------Drawer Section Content--------------------------------------------------------------------------------------------- */}
+          {/*-------------------------------Drawer Section Content--------------------------------------------------------------------------------------------- */}
           <Drawer.Section style={styles.section}>
-{/*-------------------------------Music Content---------------------------------------------------------------------------------------------------- */}
+            {/*-------------------------------Music Content---------------------------------------------------------------------------------------------------- */}
             <DrawerItem
               icon={({ color, size }) => (
                 <Ionicons name="musical-notes" color="#ff8303" size={size} />
               )}
-              label={() => (
-                <Text style = {{color:'#ff8303'}}>
-                  Music
-                </Text>
-              )}
+              label={() => <Text style={{ color: "#ff8303" }}>Music</Text>}
               activeBackgroundColor="red"
               pressColor="yellow"
               style={{}}
@@ -73,98 +70,91 @@ export function DrawerContent(props) {
                 props.navigation.navigate("Home");
               }}
             />
-{/*-------------------------------Settings Content------------------------------------------------------------------------------------------------ */}
+            {/*-------------------------------Settings Content------------------------------------------------------------------------------------------------ */}
             <DrawerItem
               icon={({ color, size }) => (
                 <Ionicons name="settings" color="#ff8303" size={size} />
               )}
-              label={() => (
-                <Text style = {{color:'#ff8303'}}>
-                  Settings
-                </Text>
-              )}
+              label={() => <Text style={{ color: "#ff8303" }}>Settings</Text>}
               pressColor="yellow"
               style={{}}
               onPress={() => {
                 props.navigation.navigate("Settings");
               }}
             />
-{/*-------------------------------Storage Content---------------------------------------------------------------------------------------------------- */}
+            {/*-------------------------------Storage Content---------------------------------------------------------------------------------------------------- */}
             <DrawerItem
               icon={({ color, size }) => (
                 <MaterialIcons name="storage" size={24} color="#ff8303" />
               )}
-              label={() => (
-                <Text style = {{color:'#ff8303'}}>
-                  Storage
-                </Text>
-              )}
+              label={() => <Text style={{ color: "#ff8303" }}>Storage</Text>}
               pressColor="yellow"
               style={{}}
               onPress={() => {}}
             />
-                    {/*---------------ProgressBarStarts------------ */}
-            <ProgressBar progress={0.2} color={'orange'}
-            style={{width:'70%', marginLeft:20}}
+            {/*---------------ProgressBarStarts------------ */}
+            <ProgressBar
+              progress={0.2}
+              color={"orange"}
+              style={{ width: "70%", marginLeft: 20 }}
             />
-                    {/*---------------ProgressBarEnds------------- */}
-            <View style={{flexDirection:'row', width:'100%'}}>
-            <Text style={{color:'grey', marginLeft:20,fontSize:12}}>
-              24.9GB
-            </Text>
-            <Text  style={{color:'grey', marginLeft:80, fontSize:12}}>
-              101.8 GB free
-            </Text>
+            {/*---------------ProgressBarEnds------------- */}
+            <View style={{ flexDirection: "row", width: "100%" }}>
+              <Text style={{ color: "grey", marginLeft: 20, fontSize: 12 }}>
+                24.9GB
+              </Text>
+              <Text style={{ color: "grey", marginLeft: 80, fontSize: 12 }}>
+                101.8 GB free
+              </Text>
             </View>
- {/*------------------------------------Clear Cache-------------------------- */}    
-              <DrawerItem
+            {/*------------------------------------Clear Cache-------------------------- */}
+            <DrawerItem
               icon={({ color, size }) => (
-                <MaterialCommunityIcons name="broom" size={24} color="#ff8303" />
+                <MaterialCommunityIcons
+                  name="broom"
+                  size={24}
+                  color="#ff8303"
+                />
               )}
               label={() => (
-                <Text style = {{color:'#ff8303'}}>
-                  Clear Cache
-                </Text>
+                <Text style={{ color: "#ff8303" }}>Clear Cache</Text>
               )}
               pressColor="yellow"
               style={{}}
               onPress={() => {
-                Alert.alert('Cleared cache');
+                Alert.alert("Cleared cache");
               }}
             />
           </Drawer.Section>
         </View>
       </DrawerContentScrollView>
-      </View>
+    </View>
     /*</LinearGradient>*/
   );
 }
-export default DrawerContent
+export default DrawerContent;
 const styles = StyleSheet.create({
   drawerContent: {
-      flex:1
+    flex: 1,
   },
   userinfo: {
     flexDirection: "row",
-    backgroundColor:'black',
-    height:100,
-    width:'100%',
-    alignItems:'center'
+    backgroundColor: "black",
+    height: 100,
+    width: "100%",
+    alignItems: "center",
   },
   section: {
     paddingTop: 220,
   },
-  clearcache:{
-    backgroundColor:'orange',
-    height:40,
-    width:100,
-    justifyContent:'center',
-    alignItems:'center',
-    borderRadius:10,
-    marginTop:20,
-    alignSelf:'center'
-    
-  }
+  clearcache: {
+    backgroundColor: "orange",
+    height: 40,
+    width: 100,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    marginTop: 20,
+    alignSelf: "center",
+  },
 });
-
-

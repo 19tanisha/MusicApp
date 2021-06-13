@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 60,
     flexDirection: "row",
+    marginBottom: 10,
   },
   headertext: {
     fontSize: 22,

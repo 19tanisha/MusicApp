@@ -8,8 +8,14 @@ import {
 } from "react-native";
 import { Image } from "react-native";
 import { Surface } from "react-native-paper";
+import { Modal, Provider, Portal } from "react-native-paper";
 
-export default function PopularRadioList(props) {
+export default function MotivationList(props) {
+  const [visible, setVisible] = React.useState(false);
+
+  const showModal = () => setVisible(true);
+  const hideModal = () => setVisible(false);
+
   const [songname, setSongname] = useState([
     {
       name: "Attention",
@@ -214,73 +220,103 @@ export default function PopularRadioList(props) {
     },
   ]);
   return (
-    <View style={styles.container}>
-      <Text
-        style={{
-          fontSize: 20,
-          fontWeight: "bold",
-          color: "black",
-          paddingLeft: 15,
-        }}
-      >
-        POPULAR RADIO
-      </Text>
-      <FlatList
-        keyExtractor={(item) => item.id}
-        data={songname}
-        horizontal={true}
-        renderItem={({ item, index }) => {
-          return (
-            <Surface style={styles.surface}>
-              <TouchableOpacity
-                onPress={() =>
-                  props.navigation.navigate("MusicPlayer", { item })
-                }
-                style={{ alignItems: "center", justifyContent: "center" }}
-              >
-                <View
-                  style={{
-                    width: 85,
-                    height: 85,
-                    elevation: 20,
-                    borderRadius: 200,
-                    backgroundColor: "black",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
+    <Provider>
+      <View style={styles.container}>
+        <Text
+          style={{
+            fontSize: 20,
+            fontWeight: "bold",
+            color: "black",
+            paddingLeft: 15,
+            marginBottom: 10,
+          }}
+        >
+          MOTIVATION
+        </Text>
+        <FlatList
+          keyExtractor={(item) => item.id}
+          data={songname}
+          horizontal={false}
+          numColumns={3}
+          renderItem={({ item, index }) => {
+            return (
+              <Surface style={styles.surface}>
+                <TouchableOpacity
+                  onPress={() =>
+                    props.navigation.navigate("MusicPlayer", { item })
+                  }
+                  style={{ alignItems: "center", justifyContent: "center" }}
+                  onLongPress={showModal}
+                  onPressOut={hideModal}
                 >
-                  <Image
-                    style={{ width: 80, height: 80, borderRadius: 200 }}
-                    source={item.img}
-                  />
-                </View>
-                <Text
-                  style={{
-                    color: "black",
-                    fontSize: 15,
-                    fontWeight: "700",
-                    justifyContent: "center",
-                  }}
-                >
-                  {item.name}
-                </Text>
-              </TouchableOpacity>
-            </Surface>
-          );
-        }}
-      />
-    </View>
+                  <View
+                    style={{
+                      width: 85,
+                      height: 85,
+                      elevation: 20,
+                      borderRadius: 200,
+                      backgroundColor: "black",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Image
+                      style={{ width: 80, height: 80, borderRadius: 200 }}
+                      source={item.img}
+                    />
+                  </View>
+                  <Text
+                    style={{
+                      color: "black",
+                      fontSize: 15,
+                      fontWeight: "700",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {item.name}
+                  </Text>
+                </TouchableOpacity>
+              </Surface>
+            );
+          }}
+        />
+      </View>
+      <Portal>
+        <Modal
+          visible={visible}
+          onDismiss={hideModal}
+          contentContainerStyle={{
+            height: "50%",
+            width: "80%",
+            borderRadius: 20,
+            padding: 10,
+            alignSelf: "center",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "white",
+          }}
+        >
+          <View
+            style={{
+              width: "100%",
+              height: "100%",
+              backgroundColor: "black",
+              borderRadius: 20,
+            }}
+          ></View>
+        </Modal>
+      </Portal>
+    </Provider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    height: 175,
     width: "100%",
     marginBottom: 10,
   },
   surface: {
-    width: 120,
+    width: "33%",
     padding: 5,
     backgroundColor: "transparent",
     margin: 3,
