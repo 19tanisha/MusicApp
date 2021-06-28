@@ -1,16 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ImageBackground } from "react-native";
 import {
   StyleSheet,
   Text,
   View,
   TextInput,
-  Button,
   TouchableOpacity,
 } from "react-native";
+import firebase from "firebase";
+import { auth } from "../Config";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
-const Login = ({ navigation }) => {
+
+const Login = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  {
+    /*------------------------------------When user is already logged in------------------------------------------------------- */
+  }
+  useEffect(() => {
+    const unsub = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        props.navigation.replace("HomeScreen"),
+          setLoading(false),
+          console.log("User Present ==>", authUser);
+      } else {
+        console.log("No user");
+      }
+    });
+    return unsub;
+  }, []);
+  {
+    /*--------------------------------------------------To login------------------------------------------------------- */
+  }
+  const login = () => {
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((authUser) => {
+        props.navigation.navigate("HomeScreen");
+      })
+      .catch((error) => alert(error));
+  };
+  {
+    /*---------------------------------------------------------------------------------------------------------------------- */
+  }
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
@@ -29,18 +64,22 @@ const Login = ({ navigation }) => {
           placeholderTextColor="black"
           style={styles.email}
           placeholder="Email:"
+          value={email}
+          onChangeText={(text) => setEmail(text)}
         />
 
         <TextInput
           placeholder="Password:"
           placeholderTextColor="black"
           style={styles.pass}
+          value={password}
+          onChangeText={(text) => setPassword(text)}
         />
         <LinearGradient
           style={styles.button}
           colors={["#ff8303", "#ff8303", "orange", "orange"]}
         >
-          <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+          <TouchableOpacity onPress={login}>
             <View
               style={{
                 height: 50,
@@ -60,7 +99,7 @@ const Login = ({ navigation }) => {
           <Text style={{ fontSize: 15, color: "white" }}>
             Dont have an account?
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+          <TouchableOpacity onPress={() => props.navigation.navigate("SignUp")}>
             <Text
               style={{ fontWeight: "bold", fontSize: 18, color: "#ff8303" }}
             >

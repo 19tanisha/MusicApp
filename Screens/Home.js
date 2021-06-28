@@ -77,6 +77,8 @@ const Home = (props) => {
             <MusicList name='Love Story' details='Taylor Swift'/>
             <MusicList name='Lag ja Gale' details='Lata Mangeshkar'/>
             <MusicList name='My Heart Will Go On' details='Celine Dion'/>
+
+            <MusicList name = '', detail = ' '/>
             
             </ScrollView>
     </View>*/}
@@ -115,5 +117,6 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     margin: 6,
     paddingLeft: 10,
+    justifyContent: "center",
   },
 });

@@ -6,6 +6,9 @@ import { TouchableOpacity } from "react-native";
 import { FontAwesome, AntDesign } from "react-native-vector-icons";
 
 export default function FavList(props) {
+  const [color, setColor] = useState("white");
+  const [status, setStatus] = useState(false);
+
   const [songname, setSongname] = useState([
     {
       name: "Attention",
@@ -14,6 +17,7 @@ export default function FavList(props) {
       },
       id: "5",
       artist: "Charlie Puth",
+      liked: "true",
     },
     {
       name: "Perfect",
@@ -22,6 +26,7 @@ export default function FavList(props) {
       },
       id: "2",
       artist: "Ed Sheeran",
+      liked: "false",
     },
     {
       name: "Love Story",
@@ -30,6 +35,7 @@ export default function FavList(props) {
       },
       id: "3",
       artist: "Taylor Swift",
+      liked: "true",
     },
 
     {
@@ -39,6 +45,7 @@ export default function FavList(props) {
       },
       id: "4",
       artist: "Ava Max",
+      liked: "true",
     },
     {
       name: "Gorgeous",
@@ -47,6 +54,7 @@ export default function FavList(props) {
       },
       id: "1",
       artist: "Taylor Swift",
+      liked: "true",
     },
     {
       name: "We Dont Talk Anymore",
@@ -55,6 +63,7 @@ export default function FavList(props) {
       },
       id: "6",
       artist: "Charlie Puth",
+      liked: "true",
     },
     {
       name: "Blank Space",
@@ -63,6 +72,7 @@ export default function FavList(props) {
       },
       id: "7",
       artist: "Taylor Swift",
+      liked: "true",
     },
     {
       name: "History",
@@ -71,6 +81,7 @@ export default function FavList(props) {
       },
       id: "8",
       artist: "One Direction",
+      liked: "true",
     },
   ]);
   return (
@@ -108,7 +119,18 @@ export default function FavList(props) {
                   paddingRight: 15,
                 }}
               >
-                <AntDesign name="heart" size={24} color="black" />
+                <AntDesign
+                  name="heart"
+                  size={24}
+                  color={color}
+                  onPress={() => {
+                    if (item.liked == "true" && color == "red") {
+                      setColor("white") && item.liked == "false";
+                    } else {
+                      setColor("red") && item.liked == "true";
+                    }
+                  }}
+                />
               </View>
             </TouchableOpacity>
           );

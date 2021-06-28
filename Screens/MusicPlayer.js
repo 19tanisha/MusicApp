@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { TouchableOpacity } from "react-native";
 import { StyleSheet, Text, View, Image, ImageBackground } from "react-native";
 import {
@@ -9,11 +9,53 @@ import {
   MaterialCommunityIcons,
 } from "react-native-vector-icons";
 import Slider from "@react-native-community/slider";
+import { Audio, Video } from "expo-av";
 
 {
   /*------------------------------------------------------Start Section--------------------------------------------------------------------------------------------------------- */
 }
 const MusicPlayer = ({ navigation, route }) => {
+  // const [sound, setSound] = useState();
+
+  // async function playSound() {
+  //   console.log("Loading Sound");
+  //   const { sound } = await Audio.Sound.createAsync(
+  //     require("../assets/minimal.mp3")
+  //   );
+
+  //   setSound(sound);
+
+  //   console.log("Playing Sound");
+  //   (await sound.playAsync()) && sound.setVolumeAsync(1);
+  // }
+
+  // useEffect(() => {
+  //   return sound
+  //     ? () => {
+  //         console.log("Unloading Sound");
+  //         sound.pauseAsync();
+  //       }
+  //     : undefined;
+  // }, [sound]);
+
+  // const [status, setStatus] = useState("play");
+
+  // const play_pause = () => {
+  //   if (status === "play") {
+  //     setStatus("pause"), playSound();
+  //   } else {
+  //     setStatus("play"), console.log("Unloading Sound");
+  //     sound.pauseAsync();
+  //   }
+  // };
+  const [status, setStatus] = useState("pause");
+  const play_pause = () => {
+    if (status === "pause") {
+      setStatus("play");
+    } else {
+      setStatus("pause");
+    }
+  };
   const { item } = route.params;
   return (
     <View style={styles.container}>
@@ -153,8 +195,8 @@ const MusicPlayer = ({ navigation, route }) => {
 
           {/*--------------------------------------------------Pause Icon------------------------------------------------------------------------- */}
           <View style={styles.icon}>
-            <TouchableOpacity style={styles.playpause}>
-              <Ionicons name="pause" size={35} color="#434b56" />
+            <TouchableOpacity style={styles.playpause} onPress={play_pause}>
+              <Ionicons name={status} size={35} color="#434b56" />
             </TouchableOpacity>
           </View>
           {/*---------------------------------------Playforward Icon------------------------------------------------------------------------- */}

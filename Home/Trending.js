@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
   surface: {
     width: 140,
     padding: 5,
-    backgroundColor: "#2d2d2d",
+    backgroundColor: "transparent",
     margin: 3,
     justifyContent: "center",
     alignItems: "center",

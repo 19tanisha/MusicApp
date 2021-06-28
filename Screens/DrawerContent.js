@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Alert } from "react-native";
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 import {
@@ -20,8 +20,39 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { ProgressBar, Colors } from "react-native-paper";
-
+import { auth, db } from "../Config";
+{
+  /*--------------------------------------------Firebase--------------------------------------------------------------- */
+}
 export function DrawerContent(props) {
+  const [userData, setUserData] = useState([]);
+  const getUser = async () => {
+    await db
+      .collection("users")
+      .doc(auth.currentUser.uid)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          setUserData(doc.data());
+          console.log(doc.data());
+        }
+      });
+  };
+
+  useEffect(() => {
+    const unsubscribe = props.navigation.addListener("focus", () => {
+      getUser();
+    });
+    return unsubscribe;
+  }, [props.navigation]);
+
+  // useEffect(() => {
+  //   effect
+  //   return () => {
+  //     cleanup
+  //   }
+  // }, [input])
+
   return (
     /*<LinearGradient
       colors={["#ff8303", "orange", "orange", "#ff8303"]}
@@ -47,9 +78,9 @@ export function DrawerContent(props) {
                   size={60}
                 />
                 <View style={{ marginLeft: 10 }}>
-                  <Title style={{ color: "#ff8303" }}>Tanisha Thakur</Title>
+                  <Title style={{ color: "#ff8303" }}>{userData.name}</Title>
                   <Caption style={{ fontSize: 15, color: "grey" }}>
-                    @tanisha19
+                    {userData.email}
                   </Caption>
                 </View>
               </View>

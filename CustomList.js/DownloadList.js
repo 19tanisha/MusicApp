@@ -1,6 +1,6 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useRef } from "react";
 import { Text, View, FlatList, StyleSheet, Image } from "react-native";
-
+import RBSheet from "react-native-raw-bottom-sheet";
 import { TouchableOpacity } from "react-native";
 
 import {
@@ -11,9 +11,12 @@ import {
   MaterialCommunityIcons,
   FontAwesome,
   AntDesign,
+  Entypo,
 } from "react-native-vector-icons";
+import BottomSheet from "../CustomList.js/BottomSheet";
 
 export default function DownloadList(props) {
+  const refRBSheet = useRef();
   const [songname, setSongname] = useState([
     {
       name: "Attention",
@@ -91,6 +94,7 @@ export default function DownloadList(props) {
             <TouchableOpacity
               onPress={() => props.navigation.navigate("MusicPlayer", { item })}
               style={styles.list}
+              activeOpacity={0.7}
             >
               <View
                 style={{
@@ -103,12 +107,20 @@ export default function DownloadList(props) {
                 <View style={{ justifyContent: "center", padding: 10 }}>
                   <FontAwesome name="music" size={24} color="black" />
                 </View>
-                <View style={{ height: "100%", justifyContent: "center" }}>
-                  <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
-                  <Text>{item.artist}</Text>
+                <View
+                  style={{
+                    height: "100%",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Text style={{ fontWeight: "bold", color: "white" }}>
+                    {item.name}
+                  </Text>
+                  <Text style={{ color: "orange" }}>{item.artist}</Text>
                 </View>
               </View>
-              <View
+              <TouchableOpacity
+                onPress={() => refRBSheet.current.open()}
                 style={{
                   width: "20%",
                   justifyContent: "center",
@@ -116,8 +128,33 @@ export default function DownloadList(props) {
                   paddingRight: 15,
                 }}
               >
-                <AntDesign name="heart" size={24} color="black" />
-              </View>
+                <Entypo name="dots-three-vertical" size={24} color="black" />
+
+                <RBSheet
+                  ref={refRBSheet}
+                  height={260}
+                  closeOnDragDown={true}
+                  closeOnPressMask={true}
+                  customStyles={{
+                    wrapper: {
+                      backgroundColor: "transparent",
+                    },
+                    container: {
+                      borderTopLeftRadius: 30,
+                      borderTopRightRadius: 30,
+                      backgroundColor: "grey",
+                      alignItems: "center",
+                      width: "100%",
+                    },
+
+                    draggableIcon: {
+                      backgroundColor: "orange",
+                    },
+                  }}
+                >
+                  <BottomSheet />
+                </RBSheet>
+              </TouchableOpacity>
             </TouchableOpacity>
           );
         }}
@@ -137,8 +174,9 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "grey",
+    backgroundColor: "rgba(150,150,150,0.3)",
     borderBottomColor: "black",
     borderBottomWidth: 0.3,
+    marginVertical: 3,
   },
 });

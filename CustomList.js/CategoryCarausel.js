@@ -3,6 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { ImageBackground, Dimensions } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import axios from "axios";
 
 const CategoryCarausel = ({ navigation }) => {
   const windowWidth = Dimensions.get("window").width;
@@ -443,6 +444,7 @@ const CategoryCarausel = ({ navigation }) => {
       ],
     },
   ]);
+
   return (
     <View style={styles.container}>
       <Carousel
